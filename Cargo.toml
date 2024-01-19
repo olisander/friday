@@ -1,0 +1,33 @@
+[package]
+name = "friday"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+askama_axum = "0.4.0"
+axum = "0.7.4"
+dotenv = "0.15.0"
+envy = "0.4.2"
+time = "0.3.31"
+turf = "0.7.1"
+
+[dependencies.askama]
+version = "0.12.1"
+features = ["with-axum"]
+
+[dependencies.serde]
+version = "1.0.195"
+features = ["derive"]
+
+[dependencies.sqlx]
+version = "0.7.3"
+features = ["sqlite", "runtime-tokio-native-tls", "time"]
+
+[dependencies.tokio]
+version = "1.35.1"
+features = ["full"]
+
+[package.metadata.turf]
+load_paths = ["variables"]

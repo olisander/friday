@@ -1,0 +1,13 @@
+{% let (style_sheet, class_name) = turf::inline_style_sheet!("templates/modal.scss") %}
+<div class={{ class_name.modal }} _="on closeModal add .{{ class_name.closing }} then wait for animationend then remove me">
+    <style>{{ style_sheet }}</style>
+    <div class={{ class_name.modal_underlay }} _="on click trigger closeModal"></div>
+	<div class={{ class_name.modal_content }}>
+		<h1>Modal Dialog</h1>
+		This is the modal content.
+		You can put anything here, like text, or a form, or an image.
+		<br>
+		<br>
+		<button _="on click trigger closeModal">Close</button>
+	</div>
+</div>
